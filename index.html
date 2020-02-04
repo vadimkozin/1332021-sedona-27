@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -101,14 +102,49 @@
     </section>
 
     <section>
-      <h2 class="will-be-hidden">Приглашаем посетить Седону</h2>
+      <h2 class="visually-hidden">Приглашаем посетить Седону</h2>
       <strong>Заинтересовались?</strong>
       <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-      <button type="button">Поиск гостиницы в Седоне</button>
-      <section>
-        <h3 class="will-be-hidden">Поиск гостиницы в Седоне</h3>
-        <!-- Здесь будем форма -->
-        <button type="submit">Найти</button>
+      <button class="btn-toggle-search" type="button">Поиск гостиницы в Седоне</button>
+
+      <section class="wrap-search">
+        <h3 class="visually-hidden">Поиск гостиницы в Седоне</h3>
+        <form class="search" action="https://echo.htmlacademy.ru" method="post">
+          <div class="calendar">
+            <label class="calendar-label" for="date-arrival-field">Дата заезда:</label>
+            <div class="calendar-data">
+              <input type="text" name="date-arrival" id="date-arrival-field">
+              <button type="button" onclick="alert('calendar');"></button>
+            </div>
+          </div>
+          <div class="calendar">
+            <label class="calendar-label" for="date-departure-field">Дата выезда:</label>
+              <div class="calendar-data">
+                <input type="text" name="date-departure" id="date-departure-field">
+                <button type="button" onclick="alert('calendar');"></button>
+              </div>
+          </div>
+          <section class="people">
+            <h4 class="visually-hidden">Выбор количества людей</h4>
+            <div class="people-adults">
+              <label class="people-label" for="adults">Взрослые:</label>
+              <div class="people-data">
+                <button type="button" onclick="adults.value = +adults.value - 1;">-</button>
+                <input type="text" name="number-adults" id="adults" value="0">
+                <button type="button" onclick="adults.value = +adults.value + 1;">+</button>
+              </div>
+            </div>
+            <div class="people-children">
+              <label class="people-label" for="child">Дети:</label>
+              <div class="people-data">
+                <button type="button" onclick="child.value = +child.value - 1;">-</button>
+                <input type="text" name="number-children" id="child" value="0">
+                <button type="button" onclick="child.value = +child.value + 1;">+</button>
+              </div>
+            </div>
+          </section>
+          <button class="btn-search" type="submit">Найти</button>
+        </form>
       </section>
     </section>
 

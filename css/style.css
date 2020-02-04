@@ -1,0 +1,140 @@
+body { margin: 0;}
+img { max-width: 100%;}
+a { text-decoration: none;}
+html {box-sizing: border-box;}
+*, *::before, *::after {box-sizing: inherit;}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn-toggle-search {
+  width: 568px;
+  height: 86px;
+}
+
+.btn-search {
+  position: absolute;
+  top: 282px;
+
+  width: 100%;
+  height: 58px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.wrap-search {
+  width: 568px;
+  height: 395px;
+
+  border: 1px solid lightgray; /* tmp */
+}
+
+.search {
+  position: relative;
+
+  width: 458px;
+  height: 350px;
+  margin: 0 auto;
+  padding: 55px 0;
+}
+
+/* Calendar */
+.calendar {
+  display: flex;
+  justify-content: space-between;
+  width: 458px;
+  height: 38px;
+}
+
+.search > .calendar:last-of-type {
+  margin-top: 29px;
+}
+
+.calendar-label {
+  padding-top: 8px;
+}
+
+.calendar-data {
+  display: flex;
+  width: 346px;
+
+  background-color: #f2f2f2;
+}
+
+.calendar-data input {
+  flex-grow: 2;
+
+  padding-left: 8px;
+  padding-right: 8px;
+
+  border: none;
+  background-color: transparent;
+}
+
+.calendar-data input:focus {
+  outline: none;
+}
+
+.calendar-data button {
+  width: 21px;
+  height: 22px;
+  margin-top: 7px;
+  margin-right: 9px;
+
+  border: none;
+  background-color: #f2f2f2;
+  background-image: url("../img/calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 21px 22px;
+  opacity: 0.3;
+}
+
+.people {
+  display: flex;
+  justify-content: space-between;
+  height: 38px;
+  margin-top: 30px;
+}
+
+.people-adults,
+.people-children {
+  display: flex;
+  justify-content: space-between;
+  width: 225px;
+}
+
+.people-label {
+  padding-top: 10px;
+}
+
+.people-data {
+  display: flex;
+  width: calc(38px * 3);
+
+  background-color: #f2f2f2;
+}
+
+.people-data button,
+.people-data input {
+  width: 38px;
+
+  border: none;
+  background-color: transparent;
+}
+
+.people-data input {
+  text-align: center;
+}
+
+.people-children label {
+  padding-left: 40px;
+}
