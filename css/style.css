@@ -35,7 +35,7 @@ html {box-sizing: border-box;}
   width: 568px;
   height: 395px;
 
-  border: 1px solid lightgray; /* tmp */
+  border: 1px solid lemonchiffon; /* tmp */
 }
 
 .search {
@@ -137,4 +137,117 @@ html {box-sizing: border-box;}
 
 .people-children label {
   padding-left: 40px;
+}
+
+/* select hotel */
+.hotel {
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid grey; /* tmp */
+}
+
+.hotel input + label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hotel input[type=checkbox] {
+  display: none;
+}
+
+.hotel input[type=checkbox] + label::before {
+  content: "";
+  display: inline-block;
+  width: 27px;
+  height: 23px;
+  margin-right: 16px;
+  vertical-align: middle;
+
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+}
+
+.hotel input[type=checkbox]:checked + label::before {
+  background-image: url("../img/checkbox-on.svg");
+}
+
+.hotel input[type=checkbox] + label:hover {
+  color: #81b3d2;
+}
+
+.price-text {
+  position: relative;
+
+  display: block;
+  height: 32px;
+  line-height: 28px;
+
+  border: 2px solid grey;
+}
+
+.price-width {
+  width: 314px;
+}
+
+.price-text label {
+  display: inline-block;
+  width: 49%;
+
+  text-align: center;
+}
+
+.price-text label:first-child::after {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+
+  content: "";
+  width: 2px;
+  height: 22px;
+
+  border: 1px solid grey;
+}
+
+.price-select {
+  position: relative;
+  display: block;
+  margin-top: 22px;
+  border-top: 2px solid grey;
+}
+
+.price-select > button
+{
+  position: absolute;
+  top: -11px;
+
+  content: "";
+  width: 20px;
+  height: 22px;
+
+  border: none;
+  background-image: url("../img/filter-button.svg");
+  background-repeat: no-repeat;
+  background-color: grey;   /* tmp */
+  background-size: 20px 22px;
+}
+
+.price-select > button:nth-of-type(2) {
+  left: 232px;
+}
+
+.price > button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 34px;
+  width: 133px;
+  height: 32px;
+
+  border: solid 2px grey;   /* tmp */
+}
+
+.price > button:hover {
+  background-color: grey; /* tmp */
+  color: white; /* tmp */
 }
