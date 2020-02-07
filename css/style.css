@@ -153,10 +153,6 @@ html {box-sizing: border-box;}
   margin-bottom: 10px;
 }
 
-.hotel input[type=checkbox] {
-  display: none;
-}
-
 .hotel input[type=checkbox] + label::before {
   content: "";
   display: inline-block;
@@ -173,8 +169,14 @@ html {box-sizing: border-box;}
   background-image: url("../img/checkbox-on.svg");
 }
 
-.hotel input[type=checkbox] + label:hover {
+.hotel input[type=checkbox] + label:hover,
+.hotel input[type=checkbox]:focus + label {
   color: #81b3d2;
+}
+
+/* пока так. два блока слева, один справа. в следующем раунде всё буду расставлять по макету. */
+.hotel fieldset:nth-last-child(1) {
+  margin-left: auto;
 }
 
 .price-text {
