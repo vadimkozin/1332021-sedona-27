@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <a>
+  <header class="main-header container">
+    <a class="main-header-logo">
       <img src="img/index-logo.svg" width="140" height="72" alt="Логотип городка Седона">
     </a>
-    <nav>
-      <ul>
+    <nav class="main-navigation">
+      <ul class="main-navigation-list">
         <li><a href="">Информация</a></li>
         <li><a href="">Фото и видео</a></li>
         <li><a href="">Карта штата</a></li>
@@ -20,31 +22,30 @@
     </nav>
   </header>
 
-  <main>
+  <main class="container">
     <h1 class="visually-hidden">Великолепная Седона</h1>
-    <section>
+    <section class="welcome">
       <h2 class="visually-hidden">Добро пожаловать в Седону</h2>
-      <div>
-        <img src="img/welcome.svg" width="459" height="353" alt="Добро пожаловать в великолепную Седону">
+      <div class="welcome-text" >
+        <strong >Седона — небольшой городок в Аризоне, заслуживающий большего!</strong>
+        <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
       </div>
-      <strong>Седона — небольшой городок в Аризоне, заслуживающий большего!</strong>
-      <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
     </section>
 
-    <section>
-      <div>
+    <section class="true-city">
+      <div class="true-city-text">
         <h2>Настоящий городок</h2>
         <p>— №1 —</p>
         <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
       </div>
-      <div>
+      <div class="true-city-img">
         <img src="img/sedona-city.jpg" width="800" height="256" alt="Фотография городка Седона">
       </div>
     </section>
 
-    <section>
+    <section class="advantage-living">
       <h2 class="visually-hidden">Преимущества по проживанию</h2>
-      <ul>
+      <ul class="advantage-living-list">
         <li>
           <div>
             <img src="img/housing-house.svg" width="75" height="72" alt="Иконка жилья">
@@ -69,8 +70,8 @@
       </ul>
     </section>
 
-    <section>
-      <div>
+    <section class="devils-bridge">
+      <div class="true-city-text">
         <h2>Там есть мост дъявола</h2>
         <p>— №2 —</p>
         <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
@@ -80,9 +81,9 @@
       </div>
     </section>
 
-    <section>
+    <section class="advantage-location">
       <h2 class="visually-hidden">Преимущества по местоположению</h2>
-      <ul>
+      <ul class="advantage-location-list">
         <li>
           <h3>Небольшая площадь</h3>
           <p>— №3 —</p>
@@ -101,11 +102,11 @@
       </ul>
     </section>
 
-    <section>
+    <section class="invitation">
       <h2 class="visually-hidden">Приглашаем посетить Седону</h2>
       <strong>Заинтересовались?</strong>
       <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-      <button class="btn-toggle-search" type="button">Поиск гостиницы в Седоне</button>
+      <button class="button btn-toggle-search" type="button">Поиск гостиницы в Седоне</button>
 
       <section class="wrap-search">
         <h3 class="visually-hidden">Поиск гостиницы в Седоне</h3>
@@ -143,31 +144,33 @@
               </div>
             </div>
           </section>
-          <button class="btn-search" type="submit">Найти</button>
+          <button class="button btn-search" type="submit">Найти</button>
         </form>
       </section>
     </section>
 
-    <section>
+    <section class="map">
       <h2 class="visually-hidden">Карта Седоны</h2>
       <img src="img/map.jpg" width="1200" height="593"  alt="Карта Седоны">
     </section>
   </main>
 
-  <footer>
-    <p>
+  <footer class="main-footer container">
+    <p class="main-footer-visit">
       #visitsedona<br>
       Тел: +7(495) 666-02-66
     </p>
-    <ul>
-      <li><a href="https://twitter.com/">Twitter</a></li>
-      <li><a href="https://www.facebook.com/">Facebook</a></li>
-      <li><a href="https://www.youtube.com/">YouTube</a></li>
+    <ul class="main-footer-social">
+      <li class="twitter"><a href="https://twitter.com/" aria-label="Twitter"></a></li>
+      <li class="facebook"><a href="https://www.facebook.com/" aria-label="Facebook"></a></li>
+      <li class="youtube"><a href="https://www.youtube.com/" aria-label="YouTube"></a></li>
     </ul>
-    <p>
-      Website by
-      <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmla.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
-    </p>
+    <div class="main-footer-logo">
+      <p class="main-footer-logo-text">Website by</p>
+      <a class="main-footer-logo-link" href="https://htmlacademy.ru/intensive/htmlcss">
+        <img src="img/logo-htmla.svg" width="115" height="41" alt="Логотип HTMLAcademy">
+      </a>
+    </div>
   </footer>
 
 </body>
