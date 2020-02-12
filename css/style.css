@@ -1,5 +1,5 @@
 body { margin: 0;}
-img { max-width: 100%;}
+img { max-width: 100%; height: auto;}
 a { text-decoration: none;}
 html {box-sizing: border-box;}
 *, *::before, *::after {box-sizing: inherit;}
@@ -45,16 +45,43 @@ a {
   width: 1200px;
   margin: 0 auto;
 
-  box-shadow: 0px 5px 15px 0 rgba(0, 1, 1, 0.2);
+  --box-shadow: 0px 5px 15px 0 rgba(0, 1, 1, 0.2);
 }
 
-/* block: Навигация */
+/* лого */
+.main-header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+
+/* page:1 */
+
+/* Навигация */
 .main-navigation {
   background-color: #ffffff;
 }
 
 .main-navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 56px;
+  padding: 0;
+  margin: 0;
   list-style: none;
+}
+
+.main-navigation-list li {
+  padding: 0;
+  margin: 0;
+}
+
+.main-navigation-list li:nth-of-type(2) {
+  margin-right: 244px;
 }
 
 .main-navigation-list a {
@@ -69,7 +96,11 @@ a {
    color: rgba(0, 0, 0, 0.3);
 }
 
-/* block: Добро пожаловать */
+.main-navigation-list .active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* Добро пожаловать */
 .welcome {
   position: relative;
 
@@ -99,12 +130,28 @@ a {
   width: 100%;
   min-height: 216px;
 
+  font-size: 21px;
+  text-align: center;
+
   background-color: #ffffff;
 
   border: 1px solid red; /* tmp */
 }
 
-/* block: Небольшой городок/Мост дъявола */
+.welcome-text strong {
+  display: inline-block;
+  margin-top: 61px;
+}
+
+.welcome-text p {
+  margin-top: 38px;
+  margin-bottom: 0;
+
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Небольшой городок/Мост дъявола */
 .true-city,
 .devils-bridge
 {
@@ -118,14 +165,49 @@ a {
 
 .true-city-text,
 .devils-bridge-text {
-  width: 400;
+  width: 400px;
+
+  text-align: center;
+  color: #ffffff;
   background-color: #81b3d2;
 }
 
-/* block: Преимущества */
-.advantage-living,
-.advantage-location {
+.true-city-text {
+  padding-top: 46px;
+  padding-right: 60px;
+  padding-bottom: 64px;
+  padding-left: 60px;
+}
+
+.devils-bridge-text {
+  padding-top: 49px;
+  padding-right: 49px;
+  padding-bottom: 65px;
+  padding-left: 48px;
+}
+
+.true-city-text h2,
+.devils-bridge-text h2 {
+  margin-top: 0;
+
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 21px;
+}
+.true-city-text p,
+.devils-bridge-text p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* Преимущества */
+.advantage-living {
   background-color: #ffffff;
+}
+
+.advantage-location {
+  background-color: #eeeeee;
 }
 
 .advantage-living-list,
@@ -152,7 +234,22 @@ a {
   min-height: 256px;
 }
 
-/* block: Главный футер */
+.advantage-living-list h3,
+.advantage-location-list h3 {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.advantage-living-list p,
+.advantage-location-list p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+}
+
+/* Главный футер */
 .main-footer {
   display: flex;
   align-items: center;
@@ -160,7 +257,7 @@ a {
 
   width: 100%;
   min-height: 120px;
-  margin-top: -120px;
+
 
   background-color: #ffffff;
   opacity: 0.9;
@@ -168,7 +265,12 @@ a {
   border: 1px solid red;  /* tmp */
 }
 
+.footer-shift {
+  margin-top: -120px;
+}
+
 .main-footer-visit {
+  font-size: 21px;
   border: 1px solid red;  /* tmp */
 }
 
@@ -228,11 +330,30 @@ a {
   align-self: flex-end;
 }
 
+/* Приглашение */
 .invitation {
   background-color: #ffffff;
 }
 
-/* block: Форма поиска отеля на главной */
+.invitation-text {
+  padding-top: 57px;
+  text-align: center;
+}
+
+.invitation-text strong {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.invitation-text p {
+  margin-top: 30px;
+  margin-bottom: 0;
+
+  font-weight: normal;
+  line-height: 24px;
+}
+
 .button {
   font-size: 21px;
   font-weight: 700;
@@ -241,41 +362,45 @@ a {
   color: #ffffff;
 }
 
-.btn-toggle-search {
+.invitation-button {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+
   width: 568px;
   height: 86px;
+  margin-top: 48px;
+
+  line-height: 26px;
 
   background-color: #766357;
 }
 
-.btn-search {
-  position: absolute;
-  top: 282px;
-
+.search-button {
   width: 100%;
-  height: 58px;
-  margin: 0 auto;
+  min-height: 58px;
+  margin-top: 54px;
+
+  line-height: 26px;
 
   background-color: #81b3d2;
 }
 
-.wrap-search {
-  width: 568px;
-  height: 395px;
-  border: 1px solid red; /* tmp */
-}
-
+/* Форма поиска отеля на главной */
 .search {
   position: relative;
 
-  width: 458px;
-  height: 350px;
   margin: 0 auto;
-  padding: 55px 0;
+  width: 568px;
+  height: 395px;
+  padding: 55px;
+
   background-color: #ffffff;
+  box-shadow: 0px 7px 15px 0 rgba(0, 1, 1, 0.15);
+
 }
 
-/* block: Календарь в форме поиска */
+/* Календарь в форме поиска отеля */
 .calendar {
   display: flex;
   justify-content: space-between;
@@ -299,7 +424,7 @@ a {
 }
 
 .calendar-data input {
-  flex-grow: 2;
+  flex-grow: 1;
 
   padding-left: 8px;
   padding-right: 8px;
@@ -326,6 +451,7 @@ a {
   opacity: 0.3;
 }
 
+/* Выбор количества взрослых и детей в форме поиска отеля */
 .people {
   display: flex;
   justify-content: space-between;
@@ -367,7 +493,14 @@ a {
   padding-left: 40px;
 }
 
-/* block: Форма выбора отеля на внутренней странице */
+/* Карта */
+.map {
+  margin-top: -395px;
+}
+
+/* page:2 Окончательный выбор отеля  */
+
+/* Форма выбора отеля на внутренней странице */
 .hotel {
   display: flex;
   justify-content: space-between;
@@ -402,7 +535,6 @@ a {
   color: #81b3d2;
 }
 
-/* пока так. два блока слева, один справа. в следующем раунде всё буду расставлять по макету. */
 .hotel fieldset:nth-last-child(1) {
   margin-left: auto;
 }
@@ -481,4 +613,62 @@ a {
 .price > button:hover {
   background-color: grey; /* tmp */
   color: white; /* tmp */
+}
+
+/* Список выбранных отелей */
+.hotel-list {
+  list-style: none;
+  padding: 0;
+
+  background-color: #ffffff;
+}
+
+.hotel-item-feature {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.hotel-item-feature h3 {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.hotel-item-feature p:nth-of-type(n+2):nth-of-type(-n+3)
+{
+  font-weight: 400;
+  color: #333333;
+}
+
+.hotel-item-feature a {
+  padding-top: 8px;
+  padding-left: 16px;
+  padding-bottom: 8px;
+  padding-right: 16px;
+
+  color: #ffffff;
+  background-color: #81b3d2;
+}
+
+.hotel-item-feature a:nth-last-of-type(1) {
+  background-color: #766357;
+}
+
+.hotel-item-feature a:nth-of-type(1) {
+  margin-right: 2px;
+}
+
+.hotel-item-feature .rating {
+
+  display: inline-block;
+
+  padding-top: 5px;
+  padding-right: 13px;
+  padding-bottom: 6px;
+  padding-left: 16px;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: #666666;
+  background-color: #f2f2f2;
+
 }

@@ -27,14 +27,14 @@
     <section class="welcome">
       <h2 class="visually-hidden">Добро пожаловать в Седону</h2>
       <div class="welcome-text" >
-        <strong >Седона — небольшой городок в Аризоне, заслуживающий большего!</strong>
+        <strong >Седона — небольшой городок в Аризоне,<br> заслуживающий большего!</strong>
         <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
       </div>
     </section>
 
     <section class="true-city">
       <div class="true-city-text">
-        <h2>Настоящий городок</h2>
+        <h2>Настоящий<br>городок</h2>
         <p>— №1 —</p>
         <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
       </div>
@@ -55,14 +55,14 @@
         </li>
         <li>
           <div>
-            <img src="img/housing-food.svg" width="75" height="72" alt="Иконка еды">
+            <img src="img/housing-food.svg" width="74" height="70" alt="Иконка еды">
           </div>
           <h3>Еда</h3>
           <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
         </li>
         <li>
           <div>
-            <img src="img/housing-souvenirs.svg" width="75" height="72" alt="Иконка сувениров">
+            <img src="img/housing-souvenirs.svg" width="64" height="76" alt="Иконка сувениров">
           </div>
           <h3>Сувениры</h3>
           <p>Не только китайского, но и местного производства!</p>
@@ -72,7 +72,7 @@
 
     <section class="devils-bridge">
       <div class="true-city-text">
-        <h2>Там есть мост дъявола</h2>
+        <h2>Там есть<br>мост дъявола</h2>
         <p>— №2 —</p>
         <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
       </div>
@@ -85,17 +85,17 @@
       <h2 class="visually-hidden">Преимущества по местоположению</h2>
       <ul class="advantage-location-list">
         <li>
-          <h3>Небольшая площадь</h3>
+          <h3>Небольшая<br>площадь</h3>
           <p>— №3 —</p>
           <p>Все достопримечательности находятся очень близко</p>
         </li>
         <li>
-          <h3>Красивая дорога</h3>
+          <h3>Красивая<br>дорога</h3>
           <p>— №4 —</p>
           <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
         </li>
         <li>
-          <h3>Мало туристов</h3>
+          <h3>Мало<br>туристов</h3>
           <p>— №5 —</p>
           <p>Большинство едет в гранд каньон и толпится там</p>
         </li>
@@ -104,49 +104,50 @@
 
     <section class="invitation">
       <h2 class="visually-hidden">Приглашаем посетить Седону</h2>
-      <strong>Заинтересовались?</strong>
-      <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-      <button class="button btn-toggle-search" type="button">Поиск гостиницы в Седоне</button>
+      <div class="invitation-text">
+        <strong>Заинтересовались?</strong>
+        <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+      </div>
+      <button class="button invitation-button" type="button">Поиск гостиницы в Седоне</button>
 
-      <section class="wrap-search">
-        <h3 class="visually-hidden">Поиск гостиницы в Седоне</h3>
-        <form class="search" action="https://echo.htmlacademy.ru" method="post">
-          <div class="calendar">
-            <label class="calendar-label" for="date-arrival-field">Дата заезда:</label>
+      <h3 class="visually-hidden">Поиск гостиницы в Седоне</h3>
+      <form class="search" action="https://echo.htmlacademy.ru" method="post">
+        <div class="calendar">
+          <label class="calendar-label" for="date-arrival-field">Дата заезда:</label>
+          <div class="calendar-data">
+            <input type="text" name="date-arrival" id="date-arrival-field">
+            <button type="button" onclick="alert('calendar');"></button>
+          </div>
+        </div>
+        <div class="calendar">
+          <label class="calendar-label" for="date-departure-field">Дата выезда:</label>
             <div class="calendar-data">
-              <input type="text" name="date-arrival" id="date-arrival-field">
+              <input type="text" name="date-departure" id="date-departure-field">
               <button type="button" onclick="alert('calendar');"></button>
             </div>
-          </div>
-          <div class="calendar">
-            <label class="calendar-label" for="date-departure-field">Дата выезда:</label>
-              <div class="calendar-data">
-                <input type="text" name="date-departure" id="date-departure-field">
-                <button type="button" onclick="alert('calendar');"></button>
-              </div>
-          </div>
-          <section class="people">
-            <h4 class="visually-hidden">Выбор количества людей</h4>
-            <div class="people-adults">
-              <label class="people-label" for="adults">Взрослые:</label>
-              <div class="people-data">
-                <button type="button" onclick="adults.value = +adults.value - 1;">-</button>
-                <input type="text" name="number-adults" id="adults" value="0">
-                <button type="button" onclick="adults.value = +adults.value + 1;">+</button>
-              </div>
+        </div>
+        <section class="people">
+          <h4 class="visually-hidden">Выбор количества людей</h4>
+          <div class="people-adults">
+            <label class="people-label" for="adults">Взрослые:</label>
+            <div class="people-data">
+              <button type="button" onclick="adults.value = +adults.value - 1;">-</button>
+              <input type="text" name="number-adults" id="adults" value="0">
+              <button type="button" onclick="adults.value = +adults.value + 1;">+</button>
             </div>
-            <div class="people-children">
-              <label class="people-label" for="child">Дети:</label>
-              <div class="people-data">
-                <button type="button" onclick="child.value = +child.value - 1;">-</button>
-                <input type="text" name="number-children" id="child" value="0">
-                <button type="button" onclick="child.value = +child.value + 1;">+</button>
-              </div>
+          </div>
+          <div class="people-children">
+            <label class="people-label" for="child">Дети:</label>
+            <div class="people-data">
+              <button type="button" onclick="child.value = +child.value - 1;">-</button>
+              <input type="text" name="number-children" id="child" value="0">
+              <button type="button" onclick="child.value = +child.value + 1;">+</button>
             </div>
-          </section>
-          <button class="button btn-search" type="submit">Найти</button>
-        </form>
-      </section>
+          </div>
+        </section>
+        <button class="button search-button" type="submit">Найти</button>
+      </form>
+
     </section>
 
     <section class="map">
@@ -155,7 +156,7 @@
     </section>
   </main>
 
-  <footer class="main-footer container">
+  <footer class="main-footer footer-shift container">
     <p class="main-footer-visit">
       #visitsedona<br>
       Тел: +7(495) 666-02-66

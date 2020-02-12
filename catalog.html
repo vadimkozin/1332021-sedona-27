@@ -6,21 +6,21 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <a href="index.html">
+  <header  class="main-header container">
+    <a class="main-header-logo" href="index.html">
       <img src="img/index-logo.svg" width="140" height="72" alt="Логотип городка Седона">
     </a>
-    <nav>
-      <ul>
+    <nav class="main-navigation">
+      <ul class="main-navigation-list">
         <li><a href="">Информация</a></li>
         <li><a href="">Фото и видео</a></li>
         <li><a href="">Карта штата</a></li>
-        <li>Гостиницы</li>
+        <li class="active">Гостиницы</li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="container">
     <h1 class="visually-hidden">Выбор отеля в Седоне</h1>
     <section>
       <h2 class="visually-hidden">Выбор отеля</h2>
@@ -59,50 +59,50 @@
     </section>
 
     <section>
-      <h2>Список найденных отелей</h2>
-      <ul>
+      <h2 class="visually-hidden">Список найденных отелей</h2>
+      <ul class="hotel-list">
         <li>
-          <article>
+          <article class="hotel-item">
             <div>
               <img src="img/hotel-picture-1.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
             </div>
-            <div>
+            <div class="hotel-item-feature">
               <h3>Amara Resort & Spa</h3>
               <p>****</p>
               <p>Гостиница</p> <p>От 4000 Р.</p>
               <a href="">Подробнее</a>
               <a href="">Забронировать</a>
-              <p>Рейтинг: <span>8,5</span></p>
+              <p class="rating">Рейтинг: <span>8,5</span></p>
             </div>
         </article>
         </li>
         <li>
-          <article>
+          <article class="hotel-item">
             <div>
               <img src="img/hotel-picture-2.jpg" width="135" height="90" alt="Фото отеля Desert Quail Inn">
             </div>
-            <div>
+            <div class="hotel-item-feature">
               <h3>Desert Quail Inn</h3>
               <p>***</p>
               <p>Мотель</p> <p>От 3000 Р.</p>
               <a href="">Подробнее</a>
               <a href="">Забронировать</a>
-              <p>Рейтинг: <span>8,9</span></p>
+              <p class="rating">Рейтинг: <span>8,9</span></p>
             </div>
           </article>
         </li>
         <li>
-          <article>
+          <article class="hotel-item">
             <div>
               <img src="img/hotel-picture-3.jpg" width="135" height="90" alt="Фото отеля Villas at Poco Diablo">
             </div>
-            <div>
+            <div class="hotel-item-feature">
               <h3>Villas at Poco Diablo</h3>
               <p>**</p>
               <p>Апартаменты</p> <p>От 2000 Р.</p>
               <a href="">Подробнее</a>
               <a href="">Забронировать</a>
-              <p>Рейтинг: <span>9,2</span></p>
+              <p class="rating">Рейтинг: <span>9,2</span></p>
             </div>
           </article>
         </li>
@@ -110,21 +110,22 @@
     </section>
   </main>
 
-  <footer>
-    <p>
+  <footer class="main-footer container">
+    <p class="main-footer-visit">
       #visitsedona<br>
       Тел: +7(495) 666-02-66
     </p>
-    <ul>
-      <li><a href="https://twitter.com/">Twitter</a></li>
-      <li><a href="https://www.facebook.com/">Facebook</a></li>
-      <li><a href="https://www.youtube.com/">YouTube</a></li>
+    <ul class="main-footer-social">
+      <li class="twitter"><a href="https://twitter.com/" aria-label="Twitter"></a></li>
+      <li class="facebook"><a href="https://www.facebook.com/" aria-label="Facebook"></a></li>
+      <li class="youtube"><a href="https://www.youtube.com/" aria-label="YouTube"></a></li>
     </ul>
-    <p>
-      Website by
-      <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmla.svg" width="115" height="41" alt="Логотип HTMLAcademy"></a>
-    </p>
+    <div class="main-footer-logo">
+      <p class="main-footer-logo-text">Website by</p>
+      <a class="main-footer-logo-link" href="https://htmlacademy.ru/intensive/htmlcss">
+        <img src="img/logo-htmla.svg" width="115" height="41" alt="Логотип HTMLAcademy">
+      </a>
+    </div>
   </footer>
-
 </body>
 </html>
