@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Выбор отеля в Седоне</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -60,15 +62,40 @@
 
     <section>
       <h2 class="visually-hidden">Список найденных отелей</h2>
+      <section class="sorting">
+        <h3 class="visually-hidden">Сортировка отелей</h3>
+        <div class="sorting-inline">
+          <ul class="sorting-options">
+            <li>Найдено: <span>3</span></li>
+            <li>Сортировка:</li>
+            <li><a class="sorting-item sort-cost sort-active" href="">По цене</a></li>
+            <li><a class="sorting-item sort-type" href="">По типу</a></li>
+            <li><a class="sorting-item sort-rating" href="">По рейтингу</a></li>
+            <li>
+              <button class="sort-button sort-up" aria-label="sorting up">
+                <svg class="active" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                  <path fill="" d="M5.5 0L0 10h11z"/>
+                </svg>
+              </button>
+              <button class="sort-button sort-down" aria-label="sorting down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                  <path fill="" d="M5.5 10L0 0h11"/>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <ul class="hotel-list">
         <li>
           <article class="hotel-item">
             <div>
               <img src="img/hotel-picture-1.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
             </div>
-            <div class="hotel-item-feature">
+            <div class="hotel-item-features">
               <h3>Amara Resort & Spa</h3>
-              <p>****</p>
+              <p class="star stars-4">&nbsp;</p>
               <p>Гостиница</p> <p>От 4000 Р.</p>
               <a href="">Подробнее</a>
               <a href="">Забронировать</a>
@@ -81,9 +108,9 @@
             <div>
               <img src="img/hotel-picture-2.jpg" width="135" height="90" alt="Фото отеля Desert Quail Inn">
             </div>
-            <div class="hotel-item-feature">
+            <div class="hotel-item-features">
               <h3>Desert Quail Inn</h3>
-              <p>***</p>
+              <p class="star stars-3">&nbsp;</p>
               <p>Мотель</p> <p>От 3000 Р.</p>
               <a href="">Подробнее</a>
               <a href="">Забронировать</a>
@@ -96,9 +123,9 @@
             <div>
               <img src="img/hotel-picture-3.jpg" width="135" height="90" alt="Фото отеля Villas at Poco Diablo">
             </div>
-            <div class="hotel-item-feature">
+            <div class="hotel-item-features">
               <h3>Villas at Poco Diablo</h3>
-              <p>**</p>
+              <p class="star stars-2">&nbsp;</p>
               <p>Апартаменты</p> <p>От 2000 Р.</p>
               <a href="">Подробнее</a>
               <a href="">Забронировать</a>

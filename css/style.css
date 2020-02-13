@@ -258,7 +258,6 @@ a {
   width: 100%;
   min-height: 120px;
 
-
   background-color: #ffffff;
   opacity: 0.9;
 
@@ -504,14 +503,24 @@ a {
 .hotel {
   display: flex;
   justify-content: space-between;
+  padding-top: 21px;
 
   border: 1px solid grey; /* tmp */
+}
+
+.hotel legend {
+  font-size: 16px;
+  line-height: 21px;
 }
 
 .hotel input + label {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
 }
 
 .hotel input[type=checkbox] + label::before {
@@ -535,8 +544,19 @@ a {
   color: #81b3d2;
 }
 
+.hotel fieldset {
+  border: none;
+}
+
+.hotel fieldset.infr,
+.hotel fieldset.housing {
+  min-width: 210px;
+  margin-left: 70px;
+}
+
 .hotel fieldset:nth-last-child(1) {
   margin-left: auto;
+  margin-right: 70px;
 }
 
 .price-text {
@@ -544,7 +564,11 @@ a {
 
   display: block;
   height: 32px;
-  line-height: 28px;
+  padding-top: 3px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
 
   border: 2px solid grey;
 }
@@ -607,6 +631,11 @@ a {
   width: 133px;
   height: 32px;
 
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+
   border: solid 2px grey;   /* tmp */
 }
 
@@ -623,23 +652,66 @@ a {
   background-color: #ffffff;
 }
 
-.hotel-item-feature {
+.hotel-item-features {
   font-size: 14px;
   line-height: 21px;
 }
 
-.hotel-item-feature h3 {
+.hotel-item-features h3 {
   font-size: 21px;
   line-height: 26px;
 }
 
-.hotel-item-feature p:nth-of-type(n+2):nth-of-type(-n+3)
+.hotel-item-features p:nth-of-type(n+2):nth-of-type(-n+3)
 {
   font-weight: 400;
   color: #333333;
 }
 
-.hotel-item-feature a {
+.star {
+  background-repeat: no-repeat;
+  background-size: 18px 17px;
+}
+
+.stars-1 {
+  background-image: url("../img/star.svg");
+  background-position: 0 0;
+}
+
+.stars-2 {
+  background-image:
+    url("../img/star.svg"),
+    url("../img/star.svg");
+  background-position:
+    0 0,
+    23px 0;
+}
+
+.stars-3 {
+  background-image:
+    url("../img/star.svg"),
+    url("../img/star.svg"),
+    url("../img/star.svg");
+  background-position:
+    0 0,
+    23px 0,
+    calc(23px * 2) 0;
+}
+
+.stars-4 {
+  background-image:
+    url("../img/star.svg"),
+    url("../img/star.svg"),
+    url("../img/star.svg"),
+    url("../img/star.svg");
+  background-position:
+    0 0,
+    23px 0,
+    calc(23px * 2) 0,
+    calc(23px * 3) 0;
+}
+
+.hotel-item-features a {
   padding-top: 8px;
   padding-left: 16px;
   padding-bottom: 8px;
@@ -649,15 +721,15 @@ a {
   background-color: #81b3d2;
 }
 
-.hotel-item-feature a:nth-last-of-type(1) {
+.hotel-item-features a:nth-last-of-type(1) {
   background-color: #766357;
 }
 
-.hotel-item-feature a:nth-of-type(1) {
+.hotel-item-features a:nth-of-type(1) {
   margin-right: 2px;
 }
 
-.hotel-item-feature .rating {
+.hotel-item-features .rating {
 
   display: inline-block;
 
@@ -670,5 +742,99 @@ a {
   line-height: 21px;
   color: #666666;
   background-color: #f2f2f2;
-
 }
+
+/* Сортировка найденных отелей */
+.sorting {
+  min-height: 86px;
+
+  background-color: #ffffff;
+}
+
+.sorting p:nth-of-type(-n+2) {
+  display: inline-block;
+}
+
+.sorting-inline {
+  display: inline-block;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.sorting-options {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+.sorting-options li:nth-of-type(-n+2) {
+  margin-right: 50px;
+}
+
+.sorting-options li:nth-of-type(n+3) {
+  margin-right: 33px;
+}
+
+.sorting-options li:nth-last-of-type(1) {
+  margin-left: auto;
+}
+
+.sorting-options li:nth-of-type(1) {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.sorting-options li:nth-of-type(2) {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.sorting-item {
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.sort-active {
+  color: #81b3d2;
+}
+
+.sorting-item:hover {
+  color: #81b3d2;;
+}
+
+.sorting-item:active {
+  color: #000000;
+}
+
+.sort-button {
+  padding-left: 2px;
+  padding-right: 2px;
+
+  background-size: 11px 10px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.sort-button svg path {
+  fill: #cacaca;
+}
+
+.sort-button svg:hover path {
+  fill: #000000;
+}
+
+.sort-button svg:focus path {
+  fill: #81b3d2;
+}
+
+.sort-button svg.active path,
+.sort-button svg:active path {
+  fill: #81b3d2;
+}
+
+
