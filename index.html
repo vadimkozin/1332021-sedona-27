@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="position: relative;">
+
   <header class="main-header container">
-    <a class="main-header-logo">
-      <img src="img/index-logo.svg" width="140" height="72" alt="Логотип городка Седона">
-    </a>
     <nav class="main-navigation">
+      <a class="main-header-logo" href="">
+        <img src="img/index-logo.svg" width="140" height="72" alt="Логотип городка Седона">
+      </a>
       <ul class="main-navigation-list">
         <li><a href="">Информация</a></li>
         <li><a href="">Фото и видео</a></li>
@@ -32,72 +33,72 @@
       </div>
     </section>
 
-    <section class="true-city">
-      <div class="true-city-text">
+    <section class="city">
+      <div class="city-text">
         <h2>Настоящий<br>городок</h2>
         <p>— №1 —</p>
-        <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+        <p>Седона — не аттракцион для туристов,<br>там течёт своя жизнь</p>
       </div>
-      <div class="true-city-img">
+      <div class="city-img">
         <img src="img/sedona-city.jpg" width="800" height="256" alt="Фотография городка Седона">
       </div>
     </section>
 
     <section class="advantage-living">
       <h2 class="visually-hidden">Преимущества по проживанию</h2>
-      <ul class="advantage-living-list">
-        <li>
-          <div>
+      <ul class="advantage-living-list reset-ul">
+        <li class="living-item">
+          <div class="living-img">
             <img src="img/housing-house.svg" width="75" height="72" alt="Иконка жилья">
           </div>
           <h3>Жильё</h3>
-          <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+          <p>Рекомендуем пожить в настоящем<br>мотеле, всё как в кино!</p>
         </li>
-        <li>
-          <div>
+        <li class="living-item">
+          <div class="living-img">
             <img src="img/housing-food.svg" width="74" height="70" alt="Иконка еды">
           </div>
           <h3>Еда</h3>
-          <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+          <p>Всегда заказывайте фирменный бургер,<br>вы не разочаруетесь!</p>
         </li>
-        <li>
-          <div>
+        <li class="living-item">
+          <div class="living-img">
             <img src="img/housing-souvenirs.svg" width="64" height="76" alt="Иконка сувениров">
           </div>
           <h3>Сувениры</h3>
-          <p>Не только китайского, но и местного производства!</p>
+          <p>Не только китайского, но и местного<br>производства!</p>
         </li>
       </ul>
     </section>
 
-    <section class="devils-bridge">
-      <div class="true-city-text">
+    <section class="bridge">
+      <div class="bridge-text">
         <h2>Там есть<br>мост дъявола</h2>
         <p>— №2 —</p>
-        <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+        <p>Да, по нему можно пройти! Если конечно<br>вы осмелитесь</p>
       </div>
-      <div>
+      <div class="bridge-img">
         <img src="img/devils-bridge.jpg" width="800" height="256" alt="Мост дъявола в Седоне">
       </div>
     </section>
 
     <section class="advantage-location">
       <h2 class="visually-hidden">Преимущества по местоположению</h2>
-      <ul class="advantage-location-list">
+      <ul class="advantage-location-list reset-ul">
         <li>
           <h3>Небольшая<br>площадь</h3>
           <p>— №3 —</p>
-          <p>Все достопримечательности находятся очень близко</p>
+          <p>Все достопримечательности<br>находятся очень близко</p>
         </li>
         <li>
           <h3>Красивая<br>дорога</h3>
           <p>— №4 —</p>
-          <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          <p>Ехать в Седону из Лас-Вегаса совсем<br>не скучно!</p>
         </li>
         <li>
           <h3>Мало<br>туристов</h3>
           <p>— №5 —</p>
-          <p>Большинство едет в гранд каньон и толпится там</p>
+          <p>Большинство едет в гранд каньон<br>и толпится там</p>
         </li>
       </ul>
     </section>
@@ -161,7 +162,7 @@
       #visitsedona<br>
       Тел: +7(495) 666-02-66
     </p>
-    <ul class="main-footer-social">
+    <ul class="main-footer-social reset-ul">
       <li class="twitter"><a href="https://twitter.com/" aria-label="Twitter"></a></li>
       <li class="facebook"><a href="https://www.facebook.com/" aria-label="Facebook"></a></li>
       <li class="youtube"><a href="https://www.youtube.com/" aria-label="YouTube"></a></li>
@@ -173,6 +174,7 @@
       </a>
     </div>
   </footer>
+  <div class="divider"></div>
 
 </body>
 </html>

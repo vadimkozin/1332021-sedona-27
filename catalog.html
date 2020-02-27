@@ -9,41 +9,45 @@
 </head>
 <body>
   <header  class="main-header container">
-    <a class="main-header-logo" href="index.html">
-      <img src="img/index-logo.svg" width="140" height="72" alt="Логотип городка Седона">
-    </a>
     <nav class="main-navigation">
+      <a class="main-header-logo" href="index.html">
+        <img src="img/index-logo.svg" width="140" height="72" alt="Логотип городка Седона">
+      </a>
       <ul class="main-navigation-list">
         <li><a href="">Информация</a></li>
         <li><a href="">Фото и видео</a></li>
         <li><a href="">Карта штата</a></li>
-        <li class="active">Гостиницы</li>
+        <li class="active"><a>Гостиницы</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container">
+  <main class="page2 container">
     <h1 class="visually-hidden">Выбор отеля в Седоне</h1>
     <section>
       <h2 class="visually-hidden">Выбор отеля</h2>
-      <form class="hotel" action="https://echo.htmlacademy.ru" method="post">
+      <form class="hotel content-wrap" action="https://echo.htmlacademy.ru" method="post">
         <fieldset class="infr" tabindex="0">
           <legend>Инфраструктура:</legend>
-          <input class="visually-hidden" id="infr-1" name= "infr-pool" type="checkbox" checked>
-          <label for="infr-1">Бассейн</label>
-          <input class="visually-hidden" id="infr-2" name= "infr-parking" type="checkbox">
-          <label for="infr-2">Парковка</label>
-          <input class="visually-hidden" id="infr-3" name= "infr-wifi" type="checkbox">
-          <label for="infr-3">Wi-Fi</label>
+          <div class="input-wrap">
+            <input class="visually-hidden" id="infr-1" name= "infr-pool" type="checkbox" checked>
+            <label for="infr-1">Бассейн</label>
+            <input class="visually-hidden" id="infr-2" name= "infr-parking" type="checkbox">
+            <label for="infr-2">Парковка</label>
+            <input class="visually-hidden" id="infr-3" name= "infr-wifi" type="checkbox">
+            <label for="infr-3">Wi-Fi</label>
+          </div>
         </fieldset>
         <fieldset class="housing" tabindex="0">
           <legend>Тип жилья:</legend>
-          <input class="visually-hidden" id="housing-1" name= "housing-hotel" type="checkbox" checked >
-          <label for="housing-1">Гостиница</label>
-          <input class="visually-hidden" id="housing-2" name= "housing-motel" type="checkbox" checked>
-          <label for="housing-2">Мотель</label>
-          <input class="visually-hidden" id="housing-3" name= "housing-apartments" type="checkbox" checked>
-          <label for="housing-3">Апартаменты</label>
+          <div class="input-wrap">
+            <input class="visually-hidden" id="housing-1" name= "housing-hotel" type="checkbox" checked >
+            <label for="housing-1">Гостиница</label>
+            <input class="visually-hidden" id="housing-2" name= "housing-motel" type="checkbox" checked>
+            <label for="housing-2">Мотель</label>
+            <input class="visually-hidden" id="housing-3" name= "housing-apartments" type="checkbox" checked>
+            <label for="housing-3">Апартаменты</label>
+          </div>
         </fieldset>
         <fieldset class="price" tabindex="0">
           <legend>Стоимость в сутки (Р):</legend>
@@ -62,10 +66,10 @@
 
     <section>
       <h2 class="visually-hidden">Список найденных отелей</h2>
-      <section class="sorting">
+      <section class="sorting content-wrap">
         <h3 class="visually-hidden">Сортировка отелей</h3>
         <div class="sorting-inline">
-          <ul class="sorting-options">
+          <ul class="sorting-options reset-ul">
             <li>Найдено: <span>3</span></li>
             <li>Сортировка:</li>
             <li><a class="sorting-item sort-cost sort-active" href="">По цене</a></li>
@@ -73,12 +77,12 @@
             <li><a class="sorting-item sort-rating" href="">По рейтингу</a></li>
             <li>
               <button class="sort-button sort-up" aria-label="sorting up">
-                <svg class="active" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
                   <path fill="" d="M5.5 0L0 10h11z"/>
                 </svg>
               </button>
               <button class="sort-button sort-down" aria-label="sorting down">
-                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                <svg class="active" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
                   <path fill="" d="M5.5 10L0 0h11"/>
                 </svg>
               </button>
@@ -87,53 +91,96 @@
         </div>
       </section>
 
-      <ul class="hotel-list">
+      <div class="divider"></div>
+
+      <ul class="reset-ul">
         <li>
-          <article class="hotel-item">
-            <div>
-              <img src="img/hotel-picture-1.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
-            </div>
-            <div class="hotel-item-features">
-              <h3>Amara Resort & Spa</h3>
-              <p class="star stars-4">&nbsp;</p>
-              <p>Гостиница</p> <p>От 4000 Р.</p>
-              <a href="">Подробнее</a>
-              <a href="">Забронировать</a>
-              <p class="rating">Рейтинг: <span>8,5</span></p>
+          <article class="hotel-wrapper content-wrap">
+            <div class="hotel-item">
+              <div>
+                <img src="img/hotel-picture-1.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
+              </div>
+              <div class="hotel-item-features">
+                <div class="hotel-name">
+                  <h3>Amara Resort & Spa</h3>
+                  <p class="star stars-4"></p>
+                </div>
+                <div class="hotel-type">
+                  <p>Гостиница</p><p>От 4000 Р.</p>
+                </div>
+                <div class="hotel-more">
+                  <div class="hotel-more-buttoms">
+                    <a href="">Подробнее</a>
+                    <a href="">Забронировать</a>
+                  </div>
+                  <div>
+                    <a class="rating" href="">Рейтинг: <span>8,5</span></a>
+                  </div>
+                </div>
+              </div>
             </div>
         </article>
         </li>
+        <div class="divider"></div>
         <li>
-          <article class="hotel-item">
-            <div>
-              <img src="img/hotel-picture-2.jpg" width="135" height="90" alt="Фото отеля Desert Quail Inn">
+          <article class="hotel-wrapper content-wrap">
+            <div class="hotel-item">
+              <div>
+                <img src="img/hotel-picture-2.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
+              </div>
+              <div class="hotel-item-features">
+                <div class="hotel-name">
+                  <h3>Desert Quail Inn</h3>
+                  <p class="star stars-3"></p>
+                </div>
+                <div class="hotel-type">
+                  <p>Мотель</p><p>От 3000 Р.</p>
+                </div>
+                <div class="hotel-more">
+                  <div class="hotel-more-buttoms">
+                    <a href="">Подробнее</a>
+                    <a href="">Забронировать</a>
+                  </div>
+                  <div>
+                    <a class="rating" href="">Рейтинг: <span>8,9</span></a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hotel-item-features">
-              <h3>Desert Quail Inn</h3>
-              <p class="star stars-3">&nbsp;</p>
-              <p>Мотель</p> <p>От 3000 Р.</p>
-              <a href="">Подробнее</a>
-              <a href="">Забронировать</a>
-              <p class="rating">Рейтинг: <span>8,9</span></p>
-            </div>
-          </article>
+        </article>
         </li>
+        <div class="divider"></div>
         <li>
-          <article class="hotel-item">
-            <div>
-              <img src="img/hotel-picture-3.jpg" width="135" height="90" alt="Фото отеля Villas at Poco Diablo">
+          <article class="hotel-wrapper content-wrap">
+            <div class="hotel-item">
+              <div>
+                <img src="img/hotel-picture-3.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
+              </div>
+              <div class="hotel-item-features">
+                <div class="hotel-name">
+                  <h3>Villas at Poco Diablo</h3>
+                  <p class="star stars-2"></p>
+                </div>
+                <div class="hotel-type">
+                  <p>Апартаменты</p><p>От 2000 Р.</p>
+                </div>
+                <div class="hotel-more">
+                  <div class="hotel-more-buttoms">
+                    <a href="">Подробнее</a>
+                    <a href="">Забронировать</a>
+                  </div>
+                  <div>
+                    <a class="rating" href="">Рейтинг: <span>9,2</span></a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hotel-item-features">
-              <h3>Villas at Poco Diablo</h3>
-              <p class="star stars-2">&nbsp;</p>
-              <p>Апартаменты</p> <p>От 2000 Р.</p>
-              <a href="">Подробнее</a>
-              <a href="">Забронировать</a>
-              <p class="rating">Рейтинг: <span>9,2</span></p>
-            </div>
-          </article>
+        </article>
         </li>
+        <div class="divider div-patch"></div>
       </ul>
+
+
     </section>
   </main>
 
@@ -142,7 +189,7 @@
       #visitsedona<br>
       Тел: +7(495) 666-02-66
     </p>
-    <ul class="main-footer-social">
+    <ul class="main-footer-social reset-ul">
       <li class="twitter"><a href="https://twitter.com/" aria-label="Twitter"></a></li>
       <li class="facebook"><a href="https://www.facebook.com/" aria-label="Facebook"></a></li>
       <li class="youtube"><a href="https://www.youtube.com/" aria-label="YouTube"></a></li>
@@ -154,5 +201,6 @@
       </a>
     </div>
   </footer>
+  <div class="divider"></div>
 </body>
 </html>
