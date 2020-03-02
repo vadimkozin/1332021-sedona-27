@@ -351,87 +351,6 @@ body {
   margin-bottom: 63px;
 }
 
-/* Футер */
-.main-footer {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100%;
-  min-height: 120px;
-  padding-left: 130px;
-  padding-right: 104px;
-
-  background-color: #ffffff;
-  opacity: 0.9;
-}
-
-
-.footer-shift {
-  margin-top: -120px;
-}
-
-.main-footer-visit {
-  font-size: 21px;
-}
-
-.main-footer-social {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  margin: 0;
-}
-
-.main-footer-social > li {
-  width: 46px;
-  height: 48px;
-  margin-right: 6px;
-
-  background-color: #81b3d2;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-
-.main-footer-social > li:last-of-type {
-  margin-right: 0;
-}
-
-.main-footer-social .twitter {
-  background-image: url("../img/tw-i.svg");
-  background-size: 17px 15px;
-}
-
-.main-footer-social .facebook {
-  background-image: url("../img/fb-i.svg");
-  background-size: 12px 22px;
-}
-
-.main-footer-social .youtube {
-  background-image: url("../img/youtube-i.svg");
-  background-size: 20px 16px;
-}
-
-.main-footer-logo {
-  display: flex;
-  justify-content: center;
-}
-
-.main-footer-logo-text {
-  align-self: center;
-  margin-right: 8px;
-
-  font-weight: 400;
-}
-
-.main-footer-logo-link {
-  align-self: flex-end;
-}
-
 /* Приглашение */
 .invitation {
   background-color: #ffffff;
@@ -478,6 +397,16 @@ body {
   background-color: #766357;
 }
 
+.invitation-button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #503e33;
+}
+
+.invitation-button:hover,
+.invitation-button:focus {
+  background-color: #604e43;
+}
+
 .search-button {
   width: 100%;
   min-height: 58px;
@@ -487,6 +416,18 @@ body {
 
   background-color: #81b3d2;
 }
+
+.search-button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #5496bd;
+}
+
+.search-button:hover,
+.search-button:focus {
+  background-color: #669ec0;
+}
+
+
 
 /* Форма поиска отеля на главной */
 .search {
@@ -519,38 +460,58 @@ body {
 }
 
 .calendar-data {
-  display: flex;
+  position: relative;
+}
+
+.calendar-input {
   width: 346px;
+  height: 38px;
+  padding-left: 10px;
+  padding-right: 40px;
+
+  font-weight: 700;
+  text-transform: uppercase;
 
   background-color: #f2f2f2;
-}
-
-.calendar-data input {
-  flex-grow: 1;
-
-  padding-left: 8px;
-  padding-right: 8px;
-
-  border: none;
-  background-color: transparent;
-}
-
-.calendar-data input:focus {
+  border: solid 2px #f2f2f2;
   outline: none;
 }
 
-.calendar-data button {
-  width: 21px;
-  height: 22px;
-  margin-top: 7px;
-  margin-right: 9px;
+.calendar-button {
+  position: absolute;
+  top: 6px;
+  right: 2px;
 
-  border: none;
   background-color: #f2f2f2;
-  background-image: url("../img/calendar.svg");
-  background-repeat: no-repeat;
-  background-size: 21px 22px;
-  opacity: 0.3;
+  border: none;
+  outline: none;
+}
+
+.calendar-input:hover,
+.calendar-input:hover + .calendar-button {
+  background-color: #ebebeb;
+}
+
+.calendar-input:focus,
+.calendar-input:focus + .calendar-button {
+  background-color: #ffffff;
+}
+
+.calendar-input:focus {
+  border: solid 2px #e5e5e5;
+}
+
+.calendar-button path {
+  fill: #cacaca;
+}
+
+.calendar-button:hover path,
+.calendar-button:focus path {
+  fill: #000000;
+}
+
+.calendar-button:active path {
+  fill: #81b3d2;
 }
 
 /* Выбор количества взрослых и детей в форме поиска отеля */
@@ -588,11 +549,69 @@ body {
 }
 
 .people-data input {
+  margin-top: 1px;
+
+  font-weight: 700;
   text-align: center;
 }
 
 .people-children label {
   padding-left: 40px;
+}
+
+.people-data .plus-btn,
+.people-data .minus-btn {
+  position: relative;
+}
+.people-data .minus-btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 12px;
+  height: 3px;
+
+  background-color: #a9a9a9;
+}
+
+.people-data .plus-btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 12px;
+  height: 3px;
+  background-color: #a9a9a9;
+}
+.people-data .plus-btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 3px;
+  height: 12px;
+  background-color: #a9a9a9;
+}
+
+.people-data .minus-btn:hover:after,
+.people-data .minus-btn:focus:after,
+.people-data .plus-btn:hover:after,
+.people-data .plus-btn:hover:before,
+.people-data .plus-btn:focus:after,
+.people-data .plus-btn:focus:before {
+  background-color: #000000;
+}
+
+.people-data .minus-btn:active:after,
+.people-data .plus-btn:active:after,
+.people-data .plus-btn:active:before {
+  background-color: #81b3d2;
 }
 
 /* Карта */
@@ -1031,4 +1050,106 @@ body {
     calc(23px * 2) 0,
     calc(23px * 3) 0,
     calc(23px * 4) 0;
+}
+
+/* Футер */
+.main-footer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 120px;
+  padding-left: 124px;
+  padding-right: 101px;
+
+  background-color: #f9fbf6;
+  opacity: 0.9;
+}
+
+.main-footer.footer-page2 {
+  padding-left: 130px;
+
+  background-color: #fefefe;
+}
+
+.footer-shift {
+  margin-top: -120px;
+}
+
+.main-footer-visit {
+  font-size: 21px;
+}
+
+.main-footer-social  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 48px;
+
+  background-color: #81b3d2;
+}
+
+.social-btn:hover,
+.social-btn:focus {
+  background-color: #669ec0;
+}
+
+.social-btn:hover path,
+.social-btn:focus path {
+  fill: #ffffff;
+}
+
+.social-btn:active,
+.social-btn.active {
+  background-color: #5496bd;
+}
+
+.social-btn:active path,
+.social-btn.active path {
+  fill: #88b6d0;
+}
+
+.main-footer-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.main-footer-logo-text {
+  align-self: center;
+  margin-right: 8px;
+
+  font-weight: 400;
+}
+
+.main-footer-logo-link {
+  align-self: flex-end;
+}
+
+.main-footer-logo-link path {
+  fill: #231f20;
+}
+
+.main-footer-logo-link:hover path,
+.main-footer-logo-link:focus path {
+  fill: #81b3d2;
+}
+
+.main-footer-logo-link:active path,
+.main-footer-logo-link.active path {
+  fill: #bdbbbc;
 }
