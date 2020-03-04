@@ -672,9 +672,11 @@ body {
 .hotel input[type=checkbox]:checked + label::before {
   background-image: url("../img/checkbox-on.svg");
 }
+
 .hotel input[type=checkbox]:disabled + label::before {
   background-image: url("../img/checkbox-off-disabled.svg");
 }
+
 .hotel input[type=checkbox]:checked:disabled + label::before {
   background-image: url("../img/checkbox-on-disabled.svg");
 }
@@ -683,7 +685,8 @@ body {
   color: #81b3d2;
 }
 
-.hotel input[type=checkbox]:active + label {
+.hotel input[type=checkbox]:active + label,
+.hotel input[type=checkbox]:focus + label {
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -714,35 +717,57 @@ body {
   justify-content: space-between;
 }
 
-.price-text {
+.price {
+  width: 314px;
+}
+
+.price-data {
   position: relative;
 
-  display: block;
+  display: flex;
+  justify-content: space-between;
+
   height: 32px;
-  padding-top: 3px;
+  margin-top: 5px;
 
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
 
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
 }
 
-.price-width {
-  width: 314px;
-}
-
-.price-text label {
-  display: inline-block;
-  width: 49%;
+.price-data label {
+  width: 50%;
+  padding-top: 3px;
 
   text-align: center;
 }
 
-.price-text label:first-child::after {
+.price-data label:first-child {
+  padding-left: 40px;
+}
+
+.price-data label:last-child {
+  padding-left: 20px;
+}
+
+.price-data input {
+  width: 50px;
+
+  color: inherit;
+  font: inherit;
+
+  border: none;
+  background-color: transparent;
+}
+
+.price-data label:first-child::after {
   position: absolute;
-  top: 2px;
+  top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
 
   content: "";
   width: 2px;
@@ -751,17 +776,29 @@ body {
   border: 1px solid #ffffff;
 }
 
-.price-select {
+.price-range {
   position: relative;
-  display: block;
+
   margin-top: 22px;
-  border-top: 2px solid #ffffff;
 }
 
-.price-select > button
+.price-range .scale {
+  height: 2px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.price-range .bar {
+  width: 80%;
+  height: 2px;
+
+  background: #ffffff;
+}
+
+.price-range > button
 {
   position: absolute;
-  top: -11px;
+  top: -9px;
 
   content: "";
   width: 20px;
@@ -774,15 +811,15 @@ body {
   background-size: 20px 22px;
 }
 
-.price-select > button:hover {
+.price-range > button:hover {
   width: 22px;
   height: 24px;
 
   background-size: 22px 24px;
 }
 
-.price-select > button:nth-of-type(2) {
-  left: 232px;
+.price-range > button:nth-of-type(2) {
+  left: 78%;
 }
 
 .price > button {
@@ -802,13 +839,13 @@ body {
 
   background-color: transparent;
   border: solid 2px #ffffff;
+  border-radius: 2px;
 }
 
 .price > button:hover {
   background-color: #ffffff;
   color: #000000;
 }
-
 
 /* Сортировка найденных отелей */
 .sorting {

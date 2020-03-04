@@ -51,13 +51,16 @@
         </fieldset>
         <fieldset class="price" tabindex="0">
           <legend>Стоимость в сутки (Р):</legend>
-          <div class="price-text price-width">
-            <label>от 0</label>
-            <label>До 3000</label>
+          <div class="price-data">
+            <label>От <input name="price-min" value="0"></label>
+            <label>До <input name="price-max" value="3000"></label>
           </div>
-          <div class="price-select price-width">
-            <button type="button"></button>
-            <button type="button"></button>
+          <div class="price-range">
+            <div class="scale">
+              <div class="bar"></div>
+            </div>
+            <button type="button" aria-label="Ползунок выбора минимальной стоимости"></button>
+            <button type="button" aria-label="Ползунок выбора максимальной стоимости"></button>
           </div>
           <button type="submit">Показать</button>
         </fieldset>
