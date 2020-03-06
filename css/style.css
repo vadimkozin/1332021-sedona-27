@@ -51,7 +51,11 @@ body {
   margin: 0 auto;
 
   box-shadow: 0px 5px 15px 0 rgba(0, 1, 1, 0.2);
+  -box-shadow:
+    5px -5px 15px 0 rgba(0, 1, 1, 0.2),
+    -5px -5px 15px 0 rgba(0, 1, 1, 0.2);
 }
+
 
 .content-wrap {
   padding-left: 72px;
@@ -183,7 +187,7 @@ body {
     url("../img/bg.jpg");
   background-position:
     50% 132px,
-    0 507px,
+    -1px 506px,
     0 0 ;
   background-repeat: no-repeat;
   background-size:
@@ -353,6 +357,10 @@ body {
 
 /* Приглашение */
 .invitation {
+  position: relative;
+  z-index: 10;
+
+  min-height: 291px;
   background-color: #ffffff;
 }
 
@@ -387,6 +395,7 @@ body {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 9;
 
   width: 568px;
   height: 86px;
@@ -407,33 +416,26 @@ body {
   background-color: #604e43;
 }
 
-.search-button {
-  width: 100%;
-  min-height: 58px;
-  margin-top: 54px;
+/*...*/
 
-  line-height: 26px;
+.form-search.offset {
+  transition: all 2s;
+  transform: translate(-50%, -100%);
 
-  background-color: #81b3d2;
 }
-
-.search-button:active {
-  color: rgba(255, 255, 255, 0.3);
-  background-color: #5496bd;
-}
-
-.search-button:hover,
-.search-button:focus {
-  background-color: #669ec0;
-}
-
-
-
+/*...*/
 /* Форма поиска отеля на главной */
-.search {
-  position: relative;
 
-  margin: 0 auto;
+.form-search {
+
+  transition: all 2s;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  display: none;
   width: 568px;
   height: 395px;
   padding: 55px;
@@ -441,6 +443,21 @@ body {
   background-color: #ffffff;
   box-shadow: 0px 7px 15px 0 rgba(0, 1, 1, 0.15);
 
+}
+.form-search-show {
+  display: block;
+  /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+  animation: show 0.5s ease-in-out;
+}
+
+@keyframes show {
+  0% {
+    transform: translate(-50%, -180px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
 }
 
 /* Календарь в форме поиска отеля */
@@ -451,7 +468,7 @@ body {
   height: 38px;
 }
 
-.search > .calendar:last-of-type {
+.form-search > .calendar:last-of-type {
   margin-top: 29px;
 }
 
@@ -614,11 +631,31 @@ body {
   background-color: #81b3d2;
 }
 
+.search-button {
+  width: 100%;
+  min-height: 58px;
+  margin-top: 54px;
+
+  line-height: 26px;
+
+  background-color: #81b3d2;
+}
+
+.search-button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: #5496bd;
+}
+
+.search-button:hover,
+.search-button:focus {
+  background-color: #669ec0;
+}
+
 /* Карта */
 .map {
-  margin-top: -395px;
   line-height: 0;
 }
+
 
 /* #page2 Окончательный выбор отеля  */
 
@@ -894,6 +931,11 @@ body {
   color: rgba(0, 0, 0, 0.3);
 }
 
+.sorting-item.sort-type,
+.sorting-item.sort-rating {
+  border-bottom: 1px dotted #81b3d2;
+}
+
 .sort-active {
   color: #81b3d2;
 }
@@ -902,8 +944,12 @@ body {
   color: #81b3d2;;
 }
 
-.sorting-item:active {
+.sorting-item:active,
+.sorting-item.active,
+.sorting-item:focus
+ {
   color: #000000;
+  border-bottom: none;
 }
 
 .sort-button {
@@ -958,19 +1004,33 @@ body {
   line-height: 21px;
 }
 
-.hotel-name {
+.hotel-about {
   display: flex;
   justify-content: space-between;
 }
 
-.hotel-name h3,
-.hotel-name p {
+.hotel-about h3,
+.hotel-about p {
   margin: 0;
 }
 
-.hotel-name h3 {
+.hotel-about h3 {
   font-size: 21px;
   line-height: 26px;
+}
+
+.hotel-about .name {
+  color: #000000;
+}
+
+.hotel-about .name:hover,
+.hotel-about .name:focus {
+  color: #81b3d2;
+}
+
+.hotel-about .name:active {
+  color: rgba(0, 0, 0, 0.3);
+
 }
 
 .hotel-type {
@@ -989,28 +1049,30 @@ body {
   margin-right: 5px;
 }
 
-.hotel-more {
+.hotel-action {
   display: flex;
   justify-content: space-between;
   align-content: flex-start;
 }
 
-.hotel-more a {
+.hotel-action .more,
+.hotel-action .book {
   padding: 4px 16px;
 
   color: #ffffff;
+}
+
+.hotel-action .more {
+  margin-right: 3px;
+
   background-color: #81b3d2;
 }
 
-.hotel-more a:nth-last-of-type(1) {
+.hotel-action .book {
   background-color: #766357;
 }
 
-.hotel-more a:nth-of-type(1) {
-  margin-right: 3px;
-}
-
-.hotel-more a.rating {
+.hotel-action .rating {
   margin: 0;
   padding: 4px 16px;
 
@@ -1020,6 +1082,28 @@ body {
   color: #666666;
 
   background-color: #f2f2f2;
+}
+
+.hotel-action .more:hover,
+.hotel-action .more:focus {
+  background-color: #669ec0;
+}
+
+.hotel-action .more:active {
+  color: rgba(255, 255, 255, 0.3);
+
+  background-color: #5496bd;
+}
+
+.hotel-action .book:hover,
+.hotel-action .book:focus {
+  background-color: #604e43;
+}
+
+.hotel-action .book:active {
+  color: rgba(255, 255, 255, 0.3);
+
+  background-color: #503e33;
 }
 
 .star {
@@ -1105,6 +1189,7 @@ body {
   opacity: 0.9;
 }
 
+/* на макете левый отступ для футера почему-то разный для главной и внутренней страницы */
 .main-footer.footer-page2 {
   padding-left: 130px;
 
