@@ -113,11 +113,11 @@
       </div>
       <button class="button invitation-button" type="button">Поиск гостиницы в Седоне</button>
 
-      <form class="form-search form-search-show" action="https://echo.htmlacademy.ru" method="post">
+      <form class="form-search" action="https://echo.htmlacademy.ru" method="post">
         <div class="calendar">
           <label class="calendar-label" for="date-arrival-field">Дата заезда:</label>
           <div class="calendar-data">
-            <input class="calendar-input" type="text" name="date-arrival" id="date-arrival-field" value="24 Апреля 2017">
+            <input class="calendar-input" type="text" name="date-arrival" id="date-arrival-field" placeholder="24 Апреля 2017" pattern="\d+\s+[A-Za-zА-Яа-яЁё]{3,}\s+\d{4}" title="Укажите дату в формате: ДД месяц ГГГГ (24 апреля 2014)" autofocus required>
             <button class="calendar-button" type="button" onclick="alert('calendar');">
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
                 <path fill="#000000" d="M19.251 2.025h-2.845V.648c0-.381-.294-.689-.656-.689-.363 0-.656.308-.656.689v1.377h-3.938V.648c0-.381-.294-.689-.655-.689-.363 0-.657.308-.657.689v1.377H5.906V.648c0-.381-.294-.689-.656-.689-.363 0-.657.308-.657.689v1.377H1.75C.784 2.025 0 2.847 0 3.862v16.302C0 21.179.784 22 1.75 22h17.501c.966 0 1.749-.821 1.749-1.836V3.862c0-1.015-.783-1.837-1.749-1.837zm.437 18.139a.448.448 0 0 1-.437.459H1.75a.45.45 0 0 1-.438-.459V3.862a.45.45 0 0 1 .438-.459h2.844v1.378c0 .381.294.689.657.689.362 0 .656-.308.656-.689V3.403h3.938v1.378c0 .381.294.689.657.689.361 0 .655-.308.655-.689V3.403h3.938v1.378c0 .381.293.689.656.689.362 0 .656-.308.656-.689V3.403h2.845c.241 0 .437.206.437.459v16.302z"/>
@@ -129,7 +129,7 @@
         <div class="calendar">
           <label class="calendar-label" for="date-departure-field">Дата выезда:</label>
             <div class="calendar-data">
-              <input class="calendar-input" type="text" name="date-departure" id="date-departure-field" value="4 июля 2017">
+              <input class="calendar-input" type="text" name="date-departure" id="date-departure-field" placeholder="4 июля 2017" pattern="\d+\s+[A-Za-zА-Яа-яЁё]{3,}\s+\d{4}" title="Укажите дату в формате: ДД месяц ГГГГ (24 апреля 2014)" required>
               <button class="calendar-button" type="button" onclick="alert('calendar');">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22">
                   <path fill="#000000" d="M19.251 2.025h-2.845V.648c0-.381-.294-.689-.656-.689-.363 0-.656.308-.656.689v1.377h-3.938V.648c0-.381-.294-.689-.655-.689-.363 0-.657.308-.657.689v1.377H5.906V.648c0-.381-.294-.689-.656-.689-.363 0-.657.308-.657.689v1.377H1.75C.784 2.025 0 2.847 0 3.862v16.302C0 21.179.784 22 1.75 22h17.501c.966 0 1.749-.821 1.749-1.836V3.862c0-1.015-.783-1.837-1.749-1.837zm.437 18.139a.448.448 0 0 1-.437.459H1.75a.45.45 0 0 1-.438-.459V3.862a.45.45 0 0 1 .438-.459h2.844v1.378c0 .381.294.689.657.689.362 0 .656-.308.656-.689V3.403h3.938v1.378c0 .381.294.689.657.689.361 0 .655-.308.655-.689V3.403h3.938v1.378c0 .381.293.689.656.689.362 0 .656-.308.656-.689V3.403h2.845c.241 0 .437.206.437.459v16.302z"/>
@@ -143,17 +143,18 @@
           <div class="people-adults">
             <label class="people-label" for="adults">Взрослые:</label>
             <div class="people-data">
-              <button class="minus-btn" type="button" onclick="adults.value = +adults.value - 1;">-</button>
-              <input type="text" name="number-adults" id="adults" value="0">
-              <button class="plus-btn" type="button" onclick="adults.value = +adults.value + 1;">+</button>
+              <button class="minus-btn" type="button">-</button>
+              <input type="number" name="number-adults" id="adults" min="1" max="99" value="0" pattern="\d{1,3}" title="Укажите количество взрослых (напр. 1,2 или больше)">
+              <button class="plus-btn" type="button">+</button>
             </div>
           </div>
           <div class="people-children">
             <label class="people-label" for="child">Дети:</label>
             <div class="people-data">
-              <button class="minus-btn" type="button" onclick="child.value = +child.value - 1;">-</button>
-              <input type="text" name="number-children" id="child" value="0">
-              <button class="plus-btn" type="button" onclick="child.value = +child.value + 1;">+</button>
+              <!-- <button class="minus-btn" type="button" onclick="child.value = +child.value - 1;">-</button> -->
+              <button class="minus-btn" type="button">-</button>
+              <input type="number" name="number-children" id="child" min="0" max="99" value="0" pattern="\d{1,3}" title="Укажите количество детей если есть (напр. 0, 1,2 или больше)">
+              <button class="plus-btn" type="button">+</button>
             </div>
           </div>
         </section>

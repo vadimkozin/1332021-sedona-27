@@ -29,6 +29,7 @@ body {
   padding-right: 40px;
   background-color:#f2f2f2;
 
+  /* font: [font-style||font-variant||font-weight||font-stretch] font-size [/line-height] font-family */
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -161,13 +162,19 @@ body {
   text-align: center;
 }
 
-.main-navigation-list a:hover {
+.main-navigation-list a:hover,
+.main-navigation-list a:focus {
   color: #81b3d2;
+}
+
+.main-navigation-list a:focus {
+  outline: none;
 }
 
 .main-navigation-list a:active {
    color: rgba(0, 0, 0, 0.3);
 }
+
 
 .main-navigation-list .active a {
   color: #766357;
@@ -357,7 +364,6 @@ body {
 /* Приглашение */
 .invitation {
   position: relative;
-  z-index: 10;
 
   min-height: 291px;
   background-color: #ffffff;
@@ -394,7 +400,7 @@ body {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9;
+  z-index: 2;
 
   width: 568px;
   height: 86px;
@@ -415,26 +421,16 @@ body {
   background-color: #604e43;
 }
 
-/*...*/
 
-.form-search.offset {
-  transition: all 2s;
-  transform: translate(-50%, -100%);
-
-}
-/*...*/
 /* Форма поиска отеля на главной */
 
 .form-search {
-
-  transition: all 2s;
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
 
-  display: none;
+  display: block;
   width: 568px;
   height: 395px;
   padding: 55px;
@@ -443,20 +439,38 @@ body {
   box-shadow: 0px 7px 15px 0 rgba(0, 1, 1, 0.15);
 
 }
-.form-search-show {
+.form-hide {
+  display: none;
+}
+
+.form-show {
   display: block;
   /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
   animation: show 0.5s ease-in-out;
 }
 
 @keyframes show {
-  0% {
-    transform: translate(-50%, -180px);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, 0);
-  }
+  0%    { transform: translate(-50%, -180px); opacity: 0;}
+  100%  { transform: translate(-50%, 0); }
+}
+
+@keyframes shake {
+  0%, 100%                { transform: translateX(-50%); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-49%); }
+  20%, 40%, 60%, 80%      { transform: translateX(-51%); }
+}
+
+.form-error {
+  animation-name: shake;
+  animation-duration: 0.6s;
+}
+
+.field-err {
+  outline: 1px solid red;
+}
+
+.field-ok {
+  outline: none;
 }
 
 /* Календарь в форме поиска отеля */
@@ -858,6 +872,13 @@ body {
   left: 78%;
 }
 
+/* .price-range > button:focus {
+  outline-color: #4d90fe;
+  outline-offset: -2px;
+  outline-style: auto;
+  outline-width: 5px;
+} */
+
 .price > button {
   display: block;
 
@@ -957,6 +978,7 @@ body {
 
   background-size: 11px 10px;
   border: none;
+  background-color: transparent;
 
   cursor: pointer;
 }
@@ -1274,3 +1296,26 @@ body {
 .main-footer-logo-link.active path {
   fill: #bdbbbc;
 }
+
+/* скрытие стрелочек для input type="number" */
+/* для браузера Chrome: */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* для браузера Firefox: */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+/* для других */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* конец блока для скрытия стрелочек */
