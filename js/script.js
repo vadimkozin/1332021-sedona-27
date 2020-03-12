@@ -5,21 +5,21 @@
 // Вы можете использовать localStorage для хранения количества взрослых и детей.
 
 function init() {
-  let form = $(".form-search");
-  let submit = $(".form-search button[type='submit']");
-  let button = $(".invitation-button");
-  let dateArrival = $("input[name='date-arrival']");
-  let dateDeparture = $("input[name='date-departure']");
-  let numberAdults = $("input[name='number-adults']");
-  let numberChildren = $("input[name='number-children']");
-  let btnAdultsAdd = $(".people-adults .plus-btn");
-  let btnAdultsSubtract = $(".people-adults .minus-btn");
-  let btnChildrenAdd = $(".people-children .plus-btn");
-  let btnChildrenSubtract = $(".people-children .minus-btn");
+  var popup = $(".form-search");
+  var buttonSearch = $(".invitation-button");
+  var submitSearch = $(".form-search button[type='submit']");
+  var dateArrival = $("input[name='date-arrival']");
+  var dateDeparture = $("input[name='date-departure']");
+  var numberAdults = $("input[name='number-adults']");
+  var numberChildren = $("input[name='number-children']");
+  var btnAdultsAdd = $(".people-adults .plus-btn");
+  var btnAdultsSubtract = $(".people-adults .minus-btn");
+  var btnChildrenAdd = $(".people-children .plus-btn");
+  var btnChildrenSubtract = $(".people-children .minus-btn");
 
-  let isStorageSupport = true;
-  let storageAdults = "";
-  let storageChildren = "";
+  var isStorageSupport = true;
+  var storageAdults = "";
+  var storageChildren = "";
 
   // по ТЗ можно в локалсторадж хранить кол-во взрослых и детей
   try {
@@ -29,8 +29,8 @@ function init() {
     isStorageSupport = false;
   }
 
-  if (form) {
-    form.classList.add("form-hide");
+  if (popup) {
+    popup.classList.add("form-hide");
     if (storageAdults) {
       numberAdults.value = storageAdults
     }
@@ -40,15 +40,13 @@ function init() {
   }
 
   // проверка и отправка данных по поиску гостиницы на сервер
-  submit.addEventListener("click", function(e) {
-    let ok = isDate(dateArrival) && isDate(dateDeparture) && greaterThanZero(numberAdults) && isNumeric(numberChildren);
-    console.log(`ok:${ok}`);
-
+  submitSearch.addEventListener("click", function(e) {
+    var ok = isDate(dateArrival) && isDate(dateDeparture) && greaterThanZero(numberAdults) && isNumeric(numberChildren);
     if (!ok) {
       e.preventDefault();
-      form.classList.remove("form-error");
-      form.offsetWidth = form.offsetWidth;
-      form.classList.add("form-error");
+      popup.classList.remove("form-error");
+      popup.offsetWidth = popup.offsetWidth;
+      popup.classList.add("form-error");
     } else {
       if (isStorageSupport) {
         localStorage.setItem("adults", numberAdults.value);
@@ -57,11 +55,11 @@ function init() {
     }
   });
 
-  // переключатель открытия/закрытия формы
-  button.addEventListener("click", function(e) {
+  // переключатель открытия/закрытия формы поиска гостиницы
+  buttonSearch.addEventListener("click", function(e) {
     e.preventDefault();
-    form.classList.toggle("form-show");
-    form.classList.remove("form-error");
+    popup.classList.toggle("form-show");
+    popup.classList.remove("form-error");
   });
 
   // взрослые.кнопка +
@@ -100,23 +98,32 @@ function init() {
 
   // интересуют только положительные целые числа
   function isNumeric(element) {
-    let result = /^\d+$/.test(element.value);
-    toggleError(element, result);
+    var result = /^\d+$/.test(element.value);
+    toggleStatus(element, result);
     return result;
   }
 
   // проверка числа на > 0
   function greaterThanZero(element) {
-    let result =  (/^\d+$/.test(element.value) && parseInt(element.value) > 0) ? true : false ;
-    toggleError(element, result);
+    var result =  (/^\d+$/.test(element.value) && parseInt(element.value) > 0) ? true : false ;
+    toggleStatus(element, result);
     return result;
   }
 
   // проверка даты ( формат: 14 Апреля 2014 )
   function isDate(element) {
-    let result =  /^\d{1,}\s[A-Za-zА-Яа-яЁё]{3,}\s\d{4}$/.test(trimSpace(element.value));
-    toggleError(element, result);
-    return result;
+    var months = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь',
+                  'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',
+                  'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+    var value = trimSpace(element.value);
+    var result =  /^\d{1,}\s[A-Za-zА-Яа-яЁё]{3,}\s\d{4}$/.test(value);
+    var ok = false;
+    if (result) {
+      var month = value.split(' ')[1].toLowerCase();
+      ok = months.indexOf(month) != -1;
+    }
+    toggleStatus(element, ok);
+    return ok;
   }
 
   // лишние пробелы в строке не нужны
@@ -124,11 +131,17 @@ function init() {
     return str.replace(/\s+/g, ' ').trim();
   }
 
-  // сигнал об ошибке - обводка поля красным цветом
-  function toggleError(element, ok) {
-    element.style.outline = (!ok) ? "1px solid red" : "none";
-    setTimeout(() => element.style.outline = "none", 1350);
+  // переключение статуса поля, если ошибка - обводка поля красным цветом
+  function toggleStatus(element, ok) {
+    if (!ok) {
+      element.style.outline = "1px solid red";
+      setTimeout(function() { element.style.outline = "none" }, 1350);
+      element.focus();
+    } else {
+      element.style.outline = "none";
+    }
   }
+
 }
 
 window.addEventListener("load", init, false);
