@@ -16,10 +16,13 @@ function init() {
   var btnAdultsSubtract = $(".people-adults .minus-btn");
   var btnChildrenAdd = $(".people-children .plus-btn");
   var btnChildrenSubtract = $(".people-children .minus-btn");
+  var mapInteractive = $(".map-interactive");
 
   var isStorageSupport = true;
   var storageAdults = "";
   var storageChildren = "";
+
+  mapInteractive.style.display = "block";
 
   // по ТЗ можно в локалсторадж хранить кол-во взрослых и детей
   try {

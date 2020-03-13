@@ -5,7 +5,7 @@
   <title>Выбор отеля в Седоне</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
   <header  class="main-header container">
@@ -14,10 +14,10 @@
         <img src="img/index-logo.svg" width="140" height="72" alt="Логотип городка Седона">
       </a>
       <ul class="main-navigation-list">
-        <li><a href="">Информация</a></li>
-        <li><a href="">Фото и видео</a></li>
-        <li><a href="">Карта штата</a></li>
-        <li class="active"><a>Гостиницы</a></li>
+        <li class="nav-item"><a href="">Информация</a></li>
+        <li class="nav-item"><a href="">Фото и видео</a></li>
+        <li class="nav-item"><a href="">Карта штата</a></li>
+        <li class="nav-item active"><a>Гостиницы</a></li>
       </ul>
     </nav>
   </header>
@@ -59,8 +59,8 @@
             <div class="scale">
               <div class="bar"></div>
             </div>
-            <button type="button" aria-label="Ползунок выбора минимальной стоимости"></button>
-            <button type="button" aria-label="Ползунок выбора максимальной стоимости"></button>
+            <button type="button" aria-label="Ползунок выбора минимальной стоимости гостиницы в сутки"></button>
+            <button type="button" aria-label="Ползунок выбора максимальной стоимости гостиницы в сутки"></button>
           </div>
           <button type="submit">Показать</button>
         </fieldset>
@@ -81,12 +81,12 @@
           </ul>
           <div class="sorting-buttons">
             <button class="sort-button sort-up" aria-label="Сортировка по возрастанию">
-              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" focusable="false">
+              <svg class="sort-button-img" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" focusable="false">
                 <path fill="" d="M5.5 0L0 10h11z"/>
               </svg>
             </button>
             <button class="sort-button sort-down" aria-label="Сортировка по убыванию">
-              <svg class="active" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" focusable="false">
+              <svg class="sort-button-img active" xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" focusable="false">
                 <path fill="" d="M5.5 10L0 0h11"/>
               </svg>
             </button>
@@ -106,7 +106,7 @@
               <div class="hotel-item-features">
                 <div class="hotel-about">
                   <h3><a class="name" href="">Amara Resort & Spa</a></h3>
-                  <p class="star stars-4"></p>
+                  <p class="star stars-4" area-label="Оценка отеля - четыре звезды"></p>
                 </div>
                 <div class="hotel-type">
                   <p>Гостиница</p><p>От 4000 Р.</p>
@@ -129,12 +129,12 @@
           <article class="hotel-wrapper content-wrap">
             <div class="hotel-item">
               <div>
-                <img src="img/hotel-picture-2.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
+                <img src="img/hotel-picture-2.jpg" width="135" height="90" alt="Фото отеля Desert Quail Inn">
               </div>
               <div class="hotel-item-features">
                 <div class="hotel-about">
                   <h3><a class="name" href="">Desert Quail Inn</a></h3>
-                  <p class="star stars-3"></p>
+                  <p class="star stars-3" area-label="Оценка отеля - три звезды"></p>
                 </div>
                 <div class="hotel-type">
                   <p>Мотель</p><p>От 3000 Р.</p>
@@ -157,12 +157,12 @@
           <article class="hotel-wrapper content-wrap">
             <div class="hotel-item">
               <div>
-                <img src="img/hotel-picture-3.jpg" width="135" height="90" alt="Фото отеля Amara Resort & Spa">
+                <img src="img/hotel-picture-3.jpg" width="135" height="90" alt="Фото отеля Villas at Poco Diablo">
               </div>
               <div class="hotel-item-features">
                 <div class="hotel-about">
                   <h3><a class="name" href="">Villas at Poco Diablo</a></h3>
-                  <p class="star stars-2"></p>
+                  <p class="star stars-2" area-label="Оценка отеля - две звезды"></p>
                 </div>
                 <div class="hotel-type">
                   <p>Апартаменты</p><p>От 2000 Р.</p>
@@ -189,7 +189,7 @@
     <div class="main-footer footer-page2">
       <p class="main-footer-visit">
         #visitsedona<br>
-        Тел: +7(495) 666-02-66
+        Тел: <a href="tel:+74956660255">+7(495) 666-02-66</a>
       </p>
       <ul class="main-footer-social reset-ul">
         <li>
@@ -225,6 +225,5 @@
     </div>
   </footer>
   <div class="divider"></div>
-  <script src="js/ie11.js"></script>
 </body>
 </html>
