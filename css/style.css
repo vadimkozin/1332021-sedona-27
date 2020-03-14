@@ -24,9 +24,6 @@ html {
 body {
   margin: 0 auto;
   padding: 0;
-  width: 1280px;
-  padding-left: 40px;
-  padding-right: 40px;
   background-color:#f2f2f2;
 
   font-style: normal;
@@ -515,8 +512,17 @@ body {
   outline: none;
 }
 
+.calendar-input:-ms-input-placeholder {
+  color: #000000 !important; /* IE11 needs the !important flag */
+}
+
+.calendar-input::-ms-input-placeholder {  /* Edge */
+  color: #000000;
+}
+
 .calendar-input::placeholder {
-  color: #cacaca;
+  color: #000000;
+  opacity: 1;
 }
 
 .calendar-button {
@@ -1274,7 +1280,7 @@ body {
 }
 
 .main-footer-visit a {
-  color: #5496bd;
+  color: #000000;
 }
 
 .main-footer-social  {
