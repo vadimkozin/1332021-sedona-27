@@ -5,7 +5,7 @@
   <title>HTML Academy: Седона</title>
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -147,7 +147,7 @@
           <h4 class="visually-hidden">Выбор количества людей</h4>
           <div class="people-adults">
             <label class="people-label" for="adults">Взрослые:</label>
-            <div class="people-data">
+            <div class="people-data number">
               <button class="minus-btn" type="button">-</button><span class="visually-hidden">Кнопка для уменьшения количества взрослых</span>
               <input type="number" name="number-adults" id="adults" min="1" max="99" value="0" title="Укажите количество взрослых (напр. 1,2 или больше)">
               <button class="plus-btn" type="button">+</button><span class="visually-hidden">Кнопка для увеличения количества взрослых</span>
@@ -155,7 +155,7 @@
           </div>
           <div class="people-children">
             <label class="people-label" for="child">Дети:</label>
-            <div class="people-data">
+            <div class="people-data number">
               <button class="minus-btn" type="button">-</button><span class="visually-hidden">Кнопка для уменьшения количества детей</span>
               <input type="number" name="number-children" id="child" min="0" max="99" value="0" title="Укажите количество детей если есть (напр. 0, 1,2 или больше)">
               <button class="plus-btn" type="button">+</button><span class="visually-hidden">Кнопка для увеличения количества детей</span>
@@ -181,7 +181,7 @@
     <div class="main-footer footer-shift">
       <p class="main-footer-visit">
         #visitsedona<br>
-        Тел: <a href="tel:+74956660255">+7(495) 666-02-66</a>
+        <span>Тел: <a href="tel:+74956660255">+7(495) 666-02-66</a></span>
       </p>
       <ul class="main-footer-social reset-ul">
         <li>
@@ -217,7 +217,6 @@
     </div>
   </footer>
 
-  <div class="divider"></div>
-  <script src="js/script.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

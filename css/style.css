@@ -122,26 +122,28 @@ body {
   list-style: none;
 }
 
-.nav-item a {
+.nav-item  {
   display: block;
   width: 239px;
   padding: 15px 20px 15px 0;
-
-  color: #000000;
 }
 
 .nav-item:nth-child(4n+3) {
   margin-left: auto;
 }
 
-.nav-item:nth-child(4n+3) a {
+.nav-item:nth-child(4n+3) {
   padding: 15px 5px 15px 20px;
   text-align: right;
 }
 
-.nav-item:nth-child(4n+4) a {
+.nav-item:nth-child(4n+4) {
   padding: 15px 0 15px 20px;
   text-align: right;
+}
+
+.nav-item a {
+  color: #000000;
 }
 
 .nav-item a:hover,
@@ -165,7 +167,7 @@ body {
 .welcome {
   min-height: 510px;
 
-  background-color:#ededed;
+  background-color: #8794a1;
   background-image:
     url("../img/welcome.svg"),
     url("../img/polygon.png"),
@@ -199,6 +201,8 @@ body {
   vertical-align: top;
   margin-top: 61px;
   max-width: 600px;
+
+  font-weight: 600;
 }
 
 .slogan-text p {
@@ -208,6 +212,7 @@ body {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.012em;
+  color: #333333;
 }
 
 /* Небольшой городок/Мост дъявола */
@@ -215,7 +220,7 @@ body {
 .bridge
 {
   display: flex;
-  height: 256px;
+  min-height: 256px;
 }
 
 .bridge {
@@ -270,6 +275,19 @@ body {
 .city-text p:last-of-type,
 .bridge-text p:last-of-type {
   margin-bottom: -3px;
+}
+
+.city-img,
+.bridge-img {
+  line-height: 0;
+}
+
+.city-img {
+  background-color: #d4ced1;
+}
+
+.bridge-img {
+  background-color: #e3b699;
 }
 
 /* Преимущества */
@@ -391,6 +409,7 @@ body {
 
   font-weight: 400;
   line-height: 24px;
+  color: #333333;
 }
 
 .button {
@@ -505,6 +524,7 @@ body {
   padding-right: 40px;
 
   font-weight: 700;
+  line-height: 26px;
   text-transform: uppercase;
 
   background-color: #f2f2f2;
@@ -512,8 +532,8 @@ body {
   outline: none;
 }
 
-.calendar-input:-ms-input-placeholder {
-  color: #000000 !important; /* IE11 needs the !important flag */
+.calendar-input:-ms-input-placeholder { /* IE11 */
+  color: #000000;
 }
 
 .calendar-input::-ms-input-placeholder {  /* Edge */
@@ -542,13 +562,20 @@ body {
   background-color: #ebebeb;
 }
 
-.calendar-input:focus,
+/* .calendar-input:focus,
 .calendar-input:focus + .calendar-button {
   background-color: #ffffff;
-}
+} */
 
 .calendar-input:focus {
+  padding-right: 10px;
+
+  background-color: #ffffff;
   border: solid 2px #e5e5e5;
+}
+
+.calendar-input:focus + .calendar-button {
+  display: none;
 }
 
 .calendar-button path {
@@ -602,6 +629,7 @@ body {
   margin-top: 1px;
 
   font-weight: 700;
+  line-height: 26px;
   text-align: center;
 }
 
@@ -637,6 +665,7 @@ body {
   height: 3px;
   background-color: #a9a9a9;
 }
+
 .people-data .plus-btn:before {
   content: "";
   position: absolute;
@@ -689,7 +718,7 @@ body {
   line-height: 0;
 }
 
-.map-interactive { 
+.map-interactive {
   display: none;
 
   border-width: 0;
@@ -705,15 +734,19 @@ body {
 .hotel {
   display: flex;
   justify-content: space-between;
-  height: 218px;
+  min-height: 218px;
   padding-top: 28px;
 
   color: #ffffff;
 
-  background-color: rgb(129, 129, 129);
-  background-image: url("../img/bg-filter.jpg");
+  background-color: #56728E;
+  /* background-image: url("../img/bg-filter.jpg"); */
+  background-image: url("../img/filter-background.jpg");
+
   background-repeat: no-repeat;
-  background-size: 1200px 218px;
+  /* background-size: 1200px 218px; */
+  background-size: cover;
+
   background-position: 0;
 }
 
@@ -739,7 +772,7 @@ body {
   width: 27px;
   height: 23px;
   margin-right: 13px;
-  
+
   background-image: url("../img/checkbox-off.svg");
   background-repeat: no-repeat;
 }
@@ -750,6 +783,12 @@ body {
 
 .hotel input[type=checkbox]:checked + label::before {
   background-image: url("../img/checkbox-on.svg");
+
+}
+
+.hotel input[type=checkbox]:active + label {
+  outline: 1px solid #4D90FE;
+  outline: 1px dotted white;
 }
 
 .hotel input[type=checkbox]:disabled + label {
@@ -764,13 +803,22 @@ body {
   background-image: url("../img/checkbox-on-disabled.svg");
 }
 
+.outline {
+  outline: 1px solid transparent;
+}
+
+.hotel input[type=checkbox]:focus + label {
+  outline-color:#4D90FE;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
 .hotel input[type=checkbox] + label:hover {
   color: #81b3d2;
 }
 
-.hotel input[type=checkbox]:active + label,
-.hotel input[type=checkbox]:focus + label {
-  color: rgba(0, 0, 0, 0.3);
+.hotel input[type=checkbox] + label {
+  color: #ffffff;
 }
 
 .hotel fieldset {
@@ -934,7 +982,9 @@ body {
 /* Сортировка найденных отелей */
 .sorting {
   display: flex;
+
   background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .sorting-inline {
@@ -1039,6 +1089,7 @@ body {
 /* Список выбранных отелей */
 .hotel-list li {
   display: flex;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .hotel-wrapper {
@@ -1261,6 +1312,7 @@ body {
 
   background-color: #f9fbf6;
   opacity: 0.9;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 /* на макете левый отступ для футера почему-то разный для главной и внутренней страницы */
@@ -1275,8 +1327,14 @@ body {
 }
 
 .main-footer-visit {
+  margin-top: 17px;
   font-size: 21px;
-  line-height: 33px;
+  line-height: 26px;
+}
+
+.main-footer-visit span {
+  display: inline-block;
+  vertical-align: sub;
 }
 
 .main-footer-visit a {
@@ -1359,25 +1417,25 @@ body {
 
 /* скрытие стрелочек для input type="number" */
 /* для браузера Chrome: */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+.number input[type="number"]::-webkit-outer-spin-button,
+.number input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* для браузера Firefox: */
-input[type="number"] {
+.number input[type="number"] {
   -moz-appearance: textfield;
 }
 
-input[type="number"]:hover,
-input[type="number"]:focus {
+.number input[type="number"]:hover,
+.number input[type="number"]:focus {
   -moz-appearance: textfield;
 }
 
 /* для других */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+.number input[type=number]::-webkit-inner-spin-button,
+.number input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1391,13 +1449,16 @@ input[type=number]::-webkit-outer-spin-button {
     outline: 1px dotted white;
   }
 
+  .hotel input[type=checkbox]:focus + label {
+    outline: 1px dotted white;
+  }
+
   .price-data input:focus {
     outline: 1px dotted white;
   }
 
-  button:focus {
+  .price button:focus {
     outline: 2px dotted #81b3d2;
-    outline-offset: 1px;
   }
 
   .people-data input:focus,
@@ -1414,12 +1475,16 @@ input[type=number]::-webkit-outer-spin-button {
     outline-offset: 5px;
     outline: 1px dotted white;
   }
-  
+
+  .hotel input[type=checkbox]:focus + label {
+    outline: 1px dotted white;
+  }
+
   .price-data input:focus  {
       outline: 2px dotted white;
   }
 
-  button:focus {
+  .price button:focus {
     outline: 2px dotted #81b3d2;
     outline-offset: 1px;
   }
@@ -1438,7 +1503,11 @@ input[type=number]::-webkit-outer-spin-button {
     outline-offset: 5px;
     outline: 1px dotted white;
   }
- 
+
+  .hotel input[type=checkbox]:focus + label {
+    outline: 1px dotted white;
+  }
+
   .price-data input:focus  {
     outline: 1px dotted white;
   }
@@ -1462,4 +1531,9 @@ input[type=number]::-webkit-outer-spin-button {
     outline: 1px dotted grey;
     outline-offset: 2px;
   }
+}
+
+/* решение наставника */
+.people-data input:focus {
+  outline: none;
 }
