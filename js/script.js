@@ -145,6 +145,21 @@ function init() {
     }
   }
 
+  // для Firefox & Safari после выбора мышкой кнопок '+' или '-' не устанавливается фокус на выбранную кнопку
+  // приходится устанавливать фокус
+  function setFocus() {
+
+    var elements = document.querySelectorAll(".people-data button[type=button]");
+
+    elements.forEach(function(el) {
+      el.addEventListener('click', function(event) {
+        el.focus();
+      });
+    })
+  }
+
+  setFocus();
+
 }
 
 window.addEventListener("load", init, false);

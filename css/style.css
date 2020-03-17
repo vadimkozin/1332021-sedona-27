@@ -202,7 +202,7 @@ body {
   margin-top: 61px;
   max-width: 600px;
 
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .slogan-text p {
@@ -1525,5 +1525,13 @@ body {
 
 /* решение наставника */
 .people-data input:focus {
+  background-color: #ffffff;
+  border: solid 2px #e5e5e5;
+  outline: none;
+}
+
+.people-data button:focus {
+  background-color: #ffffff;
+  border: solid 2px #e5e5e5;
   outline: none;
 }
